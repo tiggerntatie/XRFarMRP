@@ -19,7 +19,7 @@ mesh = SubResource("PlaneMesh_3uxjl")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-far = 699050.0
+far = 699051.0
 
 [node name="XROrigin3D" type="XROrigin3D" parent="Camera3D"]
 

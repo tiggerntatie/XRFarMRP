@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2k8wxo8tclsx"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_pa073"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p42vk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3uxjl"]
+material = SubResource("StandardMaterial3D_p42vk")
+
+[sub_resource type="Environment" id="Environment_2e2go"]
+background_mode = 2
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_pa073")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_3uxjl")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+far = 699050.0
+
+[node name="XROrigin3D" type="XROrigin3D" parent="Camera3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Camera3D/XROrigin3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2e2go")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.864591, 0.502477, 0, -0.502477, 0.864591, 0, 0, 0)
